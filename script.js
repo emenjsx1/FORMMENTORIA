@@ -45,13 +45,13 @@ document.addEventListener('DOMContentLoaded', function() {
             data[key] = value;
         });
 
-        // Enviar dados para o webhook através do proxy local
-        // Se estiver usando servidor local, use /api/webhook
-        // Caso contrário, tenta direto (pode dar erro de CORS)
-        const isLocalServer = window.location.protocol === 'http:' || window.location.protocol === 'https:';
-        const webhookUrl = isLocalServer 
-            ? '/api/webhook' 
-            : 'https://n8n.ejss.space/webhook/59f001b1-2dcc-43c3-bb40-5c9f5c0b91d7';
+        // Enviar dados para o webhook
+        // Na Vercel ou servidor local, usa /api/webhook
+        // Se estiver em file://, tenta direto (pode dar erro de CORS)
+        const isFileProtocol = window.location.protocol === 'file:';
+        const webhookUrl = isFileProtocol 
+            ? 'https://n8n.ejss.space/webhook/59f001b1-2dcc-43c3-bb40-5c9f5c0b91d7'
+            : '/api/webhook';
         
         fetch(webhookUrl, {
             method: 'POST',
