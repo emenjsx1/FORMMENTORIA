@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário Mentoria Individual</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-wrapper">
+            <div class="header">
+                <h1>FORMULÁRIO MENTORIA INDIVIDUAL</h1>
+                <p class="subtitle">
+                    Eu quero te ajudar a dominar o mercado de Resposta Direta aqui em Moçambique.
+                </p>
+                <p class="description">
+                    A ideia é simples: <strong>te levar da estaca zero até o teu primeiro +100.000 Meticais por mês.</strong>
+                </p>
+                <p class="description">
+                    Vou te mostrar, passo a passo, as mesmas estratégias que me fizeram alcançar <strong>1.000.000 MT por mês</strong> com Direct Response aqui em Moçambique.
+                </p>
+                <p class="description">
+                    Essa mentoria é pra todo mundo — não importa se você é iniciante ou já avançado.<br>
+                    Se você nunca rodou uma campanha, eu vou te mostrar o passo a passo.<br>
+                    Se você já roda tráfego e tem experiência, eu vou te ajudar a ajustar, escalar e faturar muito mais.
+                </p>
+                <div class="urgency-badge">🔥 Últimas 3 vagas disponíveis hoje!</div>
+            </div>
+
+            <form id="mentoriaForm" class="form">
+                <div class="form-group">
+                    <label for="nomeCompleto" class="required">
+                        NOME COMPLETO <span class="asterisk">*</span>
+                    </label>
+                    <input 
+                        type="text" 
+                        id="nomeCompleto" 
+                        name="nomeCompleto" 
+                        required 
+                        placeholder="Digite seu nome completo"
+                        class="input-field"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="whatsapp" class="required">
+                        NÚMERO DE WHATSAPP <span class="asterisk">*</span>
+                    </label>
+                    <input 
+                        type="tel" 
+                        id="whatsapp" 
+                        name="whatsapp" 
+                        required 
+                        placeholder="+258 XX XXX XXXX"
+                        class="input-field"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="instagram" class="required">
+                        QUAL É O SEU INSTAGRAM <span class="asterisk">*</span>
+                    </label>
+                    <input 
+                        type="text" 
+                        id="instagram" 
+                        name="instagram" 
+                        required 
+                        placeholder="@seuinstagram"
+                        class="input-field"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="nivel" class="required">
+                        COMO VOCÊ SE CONSIDERA? <span class="asterisk">*</span>
+                    </label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="nivel" value="INICIANTE" required>
+                            <span class="radio-custom"></span>
+                            <span class="radio-text">INICIANTE</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="nivel" value="INTERMÉDIARIO" required>
+                            <span class="radio-custom"></span>
+                            <span class="radio-text">INTERMÉDIARIO</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="nivel" value="AVANÇADO" required>
+                            <span class="radio-custom"></span>
+                            <span class="radio-text">AVANÇADO</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="experiencia" class="required">
+                        TENS ALGUMA EXPERIÊNCIA COM O MERCADO DE PLR NACIONAL? <span class="asterisk">*</span>
+                    </label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="experiencia" value="SIM" required>
+                            <span class="radio-custom"></span>
+                            <span class="radio-text">SIM</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="experiencia" value="NÃO" required>
+                            <span class="radio-custom"></span>
+                            <span class="radio-text">NÃO</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group" id="dificuldadeGroup" style="display: none;">
+                    <label for="dificuldade" class="required">
+                        SE SIM QUAL É A SUA MAIOR DIFICULDADE? <span class="asterisk">*</span>
+                    </label>
+                    <textarea 
+                        id="dificuldade" 
+                        name="dificuldade" 
+                        rows="4"
+                        placeholder="Descreva sua maior dificuldade..."
+                        class="input-field textarea-field"
+                    ></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="retorno" class="required">
+                        EM QUANTO TEMPO ESPERA TER RETORNO? <span class="asterisk">*</span>
+                    </label>
+                    <input 
+                        type="text" 
+                        id="retorno" 
+                        name="retorno" 
+                        required 
+                        placeholder="Ex: 3 meses, 6 meses, etc."
+                        class="input-field"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="investimento" class="required">
+                        VOCÊ TEM 10MIL METICAIS PARA INVESTIR NA MENTORIA? <span class="asterisk">*</span>
+                    </label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="investimento" value="SIM" required>
+                            <span class="radio-custom"></span>
+                            <span class="radio-text">SIM</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="investimento" value="NÃO" required>
+                            <span class="radio-custom"></span>
+                            <span class="radio-text">NÃO</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="situacaoFinanceira" class="required">
+                        SOBRE A TUA SITUAÇÃO FINANCEIRA, SE VOCÊ FOR APROVADO HOJE, COMO PRETENDE PAGAR? MPESA EMOLA, CARTÃO? PRECISARIA DE ALGUM PRAZO PRA FECHAR OU FECHARIA HOJE? <span class="asterisk">*</span>
+                    </label>
+                    <textarea 
+                        id="situacaoFinanceira" 
+                        name="situacaoFinanceira" 
+                        rows="4"
+                        required
+                        placeholder="Descreva como pretende pagar..."
+                        class="input-field textarea-field"
+                    ></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    <span>ENVIAR FORMULÁRIO</span>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4 10H16M16 10L11 5M16 10L11 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Notificações de Vendas (Motion) -->
+    <div id="salesNotifications" class="sales-notifications"></div>
+
+    <script src="script.js"></script>
+    <script>
+        // Nomes moçambicanos para as notificações
+        const nomesMoçambicanos = [
+            'Manuel', 'Zainabo', 'Pedrito', 'Charmila', 'Carlos', 'Félix', 
+            'Dionízio', 'Marcelino', 'Marcela', 'Daiane', 'Carla', 'Amélia',
+            'Joaquim', 'Fatima', 'Eduardo', 'Isabel', 'Paulo', 'Rosa',
+            'António', 'Maria', 'José', 'Ana', 'Fernando', 'Sofia',
+            'Lúcio', 'Célia', 'Rui', 'Patrícia', 'Miguel', 'Teresa'
+        ];
+
+        // Criar notificação de venda
+        function criarNotificacaoVenda() {
+            const nome = nomesMoçambicanos[Math.floor(Math.random() * nomesMoçambicanos.length)];
+            const tempo = Math.floor(Math.random() * 15) + 1; // 1 a 15 minutos atrás
+            
+            const notificacao = document.createElement('div');
+            notificacao.className = 'sales-notification';
+            notificacao.innerHTML = `
+                <div class="notification-avatar">${nome.charAt(0)}</div>
+                <div class="notification-content">
+                    <div class="notification-name">${nome}</div>
+                    <div class="notification-text">preencheu o formulário</div>
+                    <div class="notification-time">há ${tempo} min</div>
+                </div>
+            `;
+            
+            const container = document.getElementById('salesNotifications');
+            container.appendChild(notificacao);
+            
+            // Animação de entrada
+            setTimeout(() => {
+                notificacao.classList.add('show');
+            }, 10);
+            
+            // Remover após animação
+            setTimeout(() => {
+                notificacao.classList.add('hide');
+                setTimeout(() => {
+                    notificacao.remove();
+                }, 300);
+            }, 5000);
+        }
+
+        // Iniciar notificações após 3 segundos
+        setTimeout(() => {
+            criarNotificacaoVenda();
+            
+            // Criar novas notificações a cada 8-15 segundos
+            const intervalo = setInterval(() => {
+                criarNotificacaoVenda();
+            }, Math.random() * 7000 + 8000); // Entre 8 e 15 segundos
+            
+            // Parar após 2 minutos (opcional)
+            setTimeout(() => {
+                clearInterval(intervalo);
+            }, 120000);
+        }, 3000);
+    </script>
+</body>
+</html>
+

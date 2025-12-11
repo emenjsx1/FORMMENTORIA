@@ -1,0 +1,35 @@
+🚀 NOVA LEAD - MENTORIA INDIVIDUAL
+
+━━━━━━━━━━━━━━━━━━━━
+👤 Nome Completo:
+{{nomeCompleto}}
+
+📱 WhatsApp:
+{{whatsapp}}
+
+📸 Instagram:
+{{instagram}}
+
+📊 Nível:
+{{nivel}}
+
+💼 Experiência com PLR:
+{{experiencia}}
+
+{{#if dificuldade}}
+🔴 Maior Dificuldade:
+{{dificuldade}}
+
+{{/if}}
+⏰ Expectativa de Retorno:
+{{retorno}}
+
+💰 Tem 10mil MT para investir?
+{{investimento}}
+
+💳 Situação Financeira:
+{{situacaoFinanceira}}
+━━━━━━━━━━━━━━━━━━━━
+
+⏰ Recebido em: {{dataHora}}
+

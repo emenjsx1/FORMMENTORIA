@@ -1,0 +1,18 @@
+{
+  "name": "formulario-mentoria",
+  "version": "1.0.0",
+  "description": "Formulário de Mentoria Individual com proxy para webhook",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "formulario",
+    "webhook",
+    "proxy"
+  ],
+  "author": "",
+  "license": "ISC"
+}
+

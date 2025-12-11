@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste do Servidor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #1a1a1a;
+            color: #fff;
+        }
+        button {
+            padding: 15px 30px;
+            background: #6366f1;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 5px;
+        }
+        button:hover {
+            background: #4f46e5;
+        }
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            background: #2a2a2a;
+            border-radius: 8px;
+            white-space: pre-wrap;
+            font-family: monospace;
+        }
+        .success {
+            color: #10b981;
+        }
+        .error {
+            color: #ef4444;
+        }
+    </style>
+</head>
+<body>
+    <h1>🧪 Teste do Servidor Webhook</h1>
+    <p>Clique no botão para testar se o servidor está funcionando:</p>
+    
+    <button onclick="testWebhook()">Testar Webhook</button>
+    <button onclick="testServer()">Testar Servidor</button>
+    
+    <div id="result"></div>
+
+    <script>
+        async function testServer() {
+            const result = document.getElementById('result');
+            result.textContent = 'Testando servidor...';
+            
+            try {
+                const response = await fetch('/');
+                if (response.ok) {
+                    result.innerHTML = '<span class="success">✅ Servidor está funcionando!</span>';
+                } else {
+                    result.innerHTML = `<span class="error">❌ Servidor retornou status: ${response.status}</span>`;
+                }
+            } catch (error) {
+                result.innerHTML = `<span class="error">❌ Erro: ${error.message}</span>`;
+            }
+        }
+
+        async function testWebhook() {
+            const result = document.getElementById('result');
+            result.textContent = 'Enviando dados de teste...';
+            
+            const testData = {
+                nomeCompleto: 'Teste Usuario',
+                whatsapp: '+258 84 123 4567',
+                instagram: '@teste',
+                nivel: 'INICIANTE',
+                experiencia: 'NÃO',
+                retorno: '3 meses',
+                investimento: 'SIM',
+                situacaoFinanceira: 'M-Pesa'
+            };
+            
+            try {
+                const response = await fetch('/api/webhook', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(testData)
+                });
+                
+                const responseText = await response.text();
+                let responseData;
+                try {
+                    responseData = JSON.parse(responseText);
+                } catch {
+                    responseData = responseText;
+                }
+                
+                if (response.ok) {
+                    result.innerHTML = `<span class="success">✅ Webhook funcionando!</span>\n\nStatus: ${response.status}\nResposta: ${JSON.stringify(responseData, null, 2)}`;
+                } else {
+                    result.innerHTML = `<span class="error">❌ Erro no webhook</span>\n\nStatus: ${response.status}\nResposta: ${JSON.stringify(responseData, null, 2)}`;
+                }
+            } catch (error) {
+                result.innerHTML = `<span class="error">❌ Erro ao conectar: ${error.message}</span>`;
+            }
+        }
+    </script>
+</body>
+</html>
+
